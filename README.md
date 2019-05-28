@@ -1,11 +1,11 @@
-# **Admin**LTE - MVC Core 2
+# **Admin**LTE - MVC Core 2.2
 This template is based from AdminLTE of http://almsaeedstudio.com.
 Converted as a .Net project.
 Add CMS feature based on AdminLTE.Core.
 
 ## Prerequisites
 as a minimum, you should have the following installed
-* Visual Studio 2017 (15.8) or 2019
+* Visual Studio 2019
 
 _built using .NET Core 2.2
 
