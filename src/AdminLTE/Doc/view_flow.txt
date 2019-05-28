@@ -1,0 +1,11 @@
+﻿1. view call sequence.
+	0. /Views/_ViewStart.cshtml defined a layout link.
+	1. /Views/Shared/_Layout.cshtml, Layout implements.   
+		@await Component.InvokeAsync("Header1") include another template file Header1ViewComponent 
+			which is defined in /ViewComponents/.
+	2. Header1ViewComponent inherit from ViewComponent and implement the method "Invoke".
+		InvokeMethod is going to define the viewfile. By default, the file name is "Default",that is means:
+		/Views/Shared/XXX/Default.cshtml. ie. HeaderViewComponent call /Views/Shared/Header/Default.cshtml.
+
+	3. PlantUml define:
+		。

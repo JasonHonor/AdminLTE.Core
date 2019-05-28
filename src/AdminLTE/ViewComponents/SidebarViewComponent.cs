@@ -30,6 +30,7 @@ namespace AdminLTE.ViewComponents
             sidebars.Add(ModuleHelper.AddModule(ModuleHelper.Module.About, Tuple.Create(0, 1, 0)));
             sidebars.Add(ModuleHelper.AddModule(ModuleHelper.Module.Contact, Tuple.Create(1, 0, 0)));
             sidebars.Add(ModuleHelper.AddTree("Account"));
+
             sidebars.Last().TreeChild = new List<SidebarMenu>()
             {
                 ModuleHelper.AddModule(ModuleHelper.Module.Login),
@@ -46,6 +47,9 @@ namespace AdminLTE.ViewComponents
                 };
                 sidebars.Add(ModuleHelper.AddModule(ModuleHelper.Module.UserLogs));
             }
+
+            //add cms menu.
+            sidebars.Add(ModuleHelper.AddModule(ModuleHelper.Module.Cms, Tuple.Create(1, 0, 0)));
 
             return View(sidebars);
         }
