@@ -20,7 +20,10 @@ namespace AdminLTE.Common
             SuperAdmin,
             Role,
             UserLogs,
-            Cms       //add cms module.
+            //--------CMS-----------------------------------
+            CmsCreateProject,       //cms create project
+            CmsCreateGroup,         //cms create directory.
+            CmsCreatePage,          //cms create page.
         }
 
         public static SidebarMenu AddHeader(string name)
@@ -130,16 +133,6 @@ namespace AdminLTE.Common
                         Name = "UserLogs",
                         IconClassName = "fa fa-link",
                         URLPath = "/UserLogs",
-                        LinkCounter = counter,
-                    };
-
-                case Module.Cms:
-                    return new SidebarMenu
-                    {
-                        Type = SidebarMenuType.Link,
-                        Name = "CMS",
-                        IconClassName = "fa fa-link",
-                        URLPath = "/Cms",
                         LinkCounter = counter,
                     };
 

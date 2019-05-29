@@ -6,6 +6,7 @@ using AdminLTE.Models;
 using System.Security.Claims;
 using AdminLTE.Common.Extensions;
 using System;
+using AdminLTE.Controllers;
 
 namespace AdminLTE.ViewComponents
 {
@@ -49,7 +50,8 @@ namespace AdminLTE.ViewComponents
             }
 
             //add cms menu.
-            sidebars.Add(ModuleHelper.AddModule(ModuleHelper.Module.Cms, Tuple.Create(1, 0, 0)));
+            //sidebars.Add(ModuleHelper.AddModule(ModuleHelper.Module.Cms, Tuple.Create(1, 0, 0)));
+            CmsController.CreateSideBarMenu(sidebars);
 
             return View(sidebars);
         }
