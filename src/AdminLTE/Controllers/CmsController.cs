@@ -80,6 +80,15 @@ namespace AdminLTE.Controllers
         {
             return View();  //search for view: /View/Cms/Test.cshtml,/Views/Shared/Test.cshtml,/Pages/Shared/Test.cshtml
         }
-        
+
+        public IActionResult Group(string id)
+        {
+            return View(id+"_group");
+        }
+
+        public IActionResult Project(string id)
+        {
+            return View(id+"_project");
+        }
     }
 }
