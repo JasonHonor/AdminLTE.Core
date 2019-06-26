@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+using AspNetCore.RouteAnalyzer;
 
 namespace AdminLTE
 {
@@ -72,7 +74,9 @@ namespace AdminLTE
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env,
+            IApplicationLifetime applicationLifetime, // Add
+            IRouteAnalyzer routeAnalyzer)
         {
             if (env.IsDevelopment())
             {
@@ -102,6 +106,18 @@ namespace AdminLTE
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            applicationLifetime.ApplicationStarted.Register(() =>
+            {
+                var infos = routeAnalyzer.GetAllRouteInformations();
+                Debug.WriteLine("======== ALL ROUTE INFORMATION ========");
+                foreach (var info in infos)
+                {
+                    Debug.WriteLine(info.ToString());
+                }
+                Debug.WriteLine("");
+                Debug.WriteLine("");
             });
 
 
