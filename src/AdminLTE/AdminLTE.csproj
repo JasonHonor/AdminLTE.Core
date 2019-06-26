@@ -64,4 +64,8 @@
     <Folder Include="wwwroot\lib\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\CoreCMS\CoreCMS.csproj" />
+  </ItemGroup>
+
 </Project>
