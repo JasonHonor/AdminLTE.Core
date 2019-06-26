@@ -9,7 +9,7 @@ as a minimum, you should have the following installed
 _built using .NET Core 2
 
 ## Installation
-Just clone or fork this. Whatever you want. Run the solution.
+Just clone or fork this. Whatever you want. Restore client side libraries. Run the solution.
 
 ## Features
 ### Controls are ViewComponent like a **UserControl**
@@ -17,7 +17,7 @@ Just clone or fork this. Whatever you want. Run the solution.
 
 see below the body of **_Layouts.cshtml**
 ```html
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <!-- Main Header -->
         @await Component.InvokeAsync("Header")
@@ -47,8 +47,16 @@ see below the body of **_Layouts.cshtml**
         <!-- /.control-sidebar -->
         <!-- Add the sidebar's background. This div must be placed
              immediately after the control sidebar -->
-        <div class="control-sidebar-bg"></div>
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
     </div>
+    <!-- ./wrapper -->
+    <!-- Optionally, you can add Slimscroll and FastClick plugins.
+    Both of these plugins are recommended to enhance the
+    user experience. Slimscroll is required when using the
+    fixed layout. -->
+
     @RenderSection("scripts", required: false)
     <script>
         useSubmitClass();

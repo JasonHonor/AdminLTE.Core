@@ -90,7 +90,7 @@
                                         @foreach (SidebarMenu subMenu in menu.TreeChild)
                                         {
                                             active = string.Empty;
-                                            if (Context.Request.Path.Value.Contains(subMenu.URLPath))
+                                            if (Context.Request.Path.Value.EndsWith(subMenu.URLPath))
                                             {
                                                 active = "active";
                                             }
